@@ -15,7 +15,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+//        [Parse setApplicationId:@"9bmICqqkK95U2nUE9AXyGZ9sRzN3zVwRwOuAtxh1"
+//        clientKey:@"mw84hWe9aJ4O97t7amcsFhBC6J2z171WdaqhMloa"];
+        
+        Parse.setApplicationId("9bmICqqkK95U2nUE9AXyGZ9sRzN3zVwRwOuAtxh1", clientKey: "mw84hWe9aJ4O97t7amcsFhBC6J2z171WdaqhMloa")
+        
+//        PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+//        testObject[@"foo"] = @"bar";
+//        [testObject saveInBackground];
+        
+          let testObject = PFObject(className: "TestObject")
+          testObject["Foo"] = "bar"
+          testObject.saveInBackgroundWithTarget(nil, selector: nil)
+        
         return true
     }
 
